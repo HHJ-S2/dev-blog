@@ -4,7 +4,13 @@ import styled from '@emotion/styled'
 const PROFILE_IMAGE_LINK =
   'https://avatars.githubusercontent.com/u/69304579?v=4'
 
-const ProfileImageWrapper = styled.img`
+const ProfileImage: FunctionComponent = function () {
+  return (
+    <StyledProfileImageWrapper src={PROFILE_IMAGE_LINK} alt={'Profile Image'} />
+  )
+}
+
+const StyledProfileImageWrapper = styled.img`
   width: 120px;
   height: 120px;
   margin-bottom: 30px;
@@ -15,9 +21,5 @@ const ProfileImageWrapper = styled.img`
     height: 80px;
   }
 `
-
-const ProfileImage: FunctionComponent = function () {
-  return <ProfileImageWrapper src={PROFILE_IMAGE_LINK} alt={'Profile Image'} />
-}
 
 export default ProfileImage

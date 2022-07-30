@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostHeadInfo from './PostHeadInfo'
-import { Category } from 'data'
 
 interface Props {
   title: string
   date: string
-  categories: Category[]
+  categories: string[]
 }
 
 const PostHead: FunctionComponent<Props> = function ({

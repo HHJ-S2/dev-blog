@@ -1,8 +1,8 @@
 export interface PostFrontmatter {
   title: string
-  summary?: string
   date: string
   categories: string[]
+  summary: string
 }
 
 export interface Post {

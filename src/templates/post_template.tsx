@@ -11,26 +11,33 @@ interface PostPageItem {
   }
 }
 
-interface PostTemplateProps {
+interface Props {
   data: {
     allMarkdownRemark: {
       edges: PostPageItem[]
     }
   }
+  location: {
+    href: string
+  }
 }
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
+const PostTemplate: FunctionComponent<Props> = function ({
   data: {
     allMarkdownRemark: { edges },
   },
+  location: { href },
 }) {
   const {
-    node: { html, frontmatter },
+    node: {
+      html,
+      frontmatter: { title, summary, date, categories },
+    },
   } = edges[0]
 
   return (
-    <Template>
-      <PostHead {...frontmatter} />
+    <Template title={title} description={summary} url={href}>
+      <PostHead title={title} date={date} categories={categories} />
       <PostContent html={html} />
       <CommentWidget />
     </Template>

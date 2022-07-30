@@ -1,11 +1,10 @@
 import React, { FunctionComponent, ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { Category } from 'data'
 
 export interface Props {
   selectedCategory: string
-  categoryList: Category
+  categoryList: { [key: string]: number }
 }
 
 interface GatsbyLinkProps {

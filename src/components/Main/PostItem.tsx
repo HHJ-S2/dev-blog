@@ -6,7 +6,7 @@ interface Props {
   title: string
   date: string
   categories: string[]
-  summary: string
+  summary?: string
   link?: string
 }
 

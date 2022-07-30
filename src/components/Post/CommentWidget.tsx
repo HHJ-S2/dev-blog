@@ -1,7 +1,7 @@
 import React, { createRef, FunctionComponent, useEffect } from 'react'
 
 const src = 'https://utteranc.es/client.js'
-const repo = 'HHJ-S2/dev-blog.github.io'
+const repo = 'HHJ-S2/dev-blog'
 
 interface UtterancesAttributesType {
   src: string
@@ -24,7 +24,7 @@ const CommentWidget: FunctionComponent = function () {
     const attributes: UtterancesAttributesType = {
       src,
       repo,
-      'issue-term': 'pathname',
+      'issue-term': 'title',
       label: 'Comment',
       theme: `github-light`,
       crossorigin: 'anonymous',

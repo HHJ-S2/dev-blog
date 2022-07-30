@@ -14,6 +14,7 @@ const useInfiniteScroll = function (
 ): useInfiniteScrollType {
   const containerRef: MutableRefObject<HTMLDivElement | null> =
     useRef<HTMLDivElement>(null)
+  let observer: IntersectionObserver
   const [count, setCount] = useState<number>(1)
 
   const postListByCategory = useMemo<Post[]>(
@@ -31,15 +32,6 @@ const useInfiniteScroll = function (
     [selectedCategory],
   )
 
-  const observer: IntersectionObserver = new IntersectionObserver(
-    (entries, observer) => {
-      if (!entries[0].isIntersecting) return
-
-      setCount(value => value + 1)
-      observer.disconnect()
-    },
-  )
-
   useEffect(() => setCount(1), [selectedCategory])
 
   useEffect(() => {
@@ -49,6 +41,13 @@ const useInfiniteScroll = function (
       containerRef.current.children.length === 0
     )
       return
+
+    observer = new IntersectionObserver((entries, observer) => {
+      if (!entries[0].isIntersecting) return
+
+      setCount(value => value + 1)
+      observer.disconnect()
+    })
 
     observer.observe(
       containerRef.current.children[containerRef.current.children.length - 1],

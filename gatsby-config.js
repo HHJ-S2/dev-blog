@@ -1,9 +1,10 @@
 module.exports = {
+  pathPrefix: `/dev-blog`,
   siteMetadata: {
     title: `Frontend developer`,
     description: `HHJ dev blog`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `hhj`,
+    siteUrl: `https://hhj-s2.github.io/`,
   },
   plugins: [
     {
@@ -61,6 +62,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://hhj-s2.github.io/',
+        stripQueryString: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

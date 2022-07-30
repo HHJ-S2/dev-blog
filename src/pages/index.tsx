@@ -3,7 +3,7 @@ import { CategoryList, PostList, Introduction } from 'components/Main'
 import queryString, { ParsedQuery } from 'query-string'
 import { graphql } from 'gatsby'
 import { Template } from 'components/Common'
-import { Category, Post } from 'data'
+import { Post } from 'data'
 
 interface Props {
   location: {
@@ -18,20 +18,26 @@ interface Props {
         title: string
         description: string
         author: string
+        siteUrl: string
       }
+    }
+    file: {
+      publicURL: string
     }
   }
 }
 
 interface CatagoryList {
   selectedCategory: string
-  categoryList: Category
+  categoryList: { [key: string]: number }
 }
 
 const IndexPage: FunctionComponent<Props> = function ({
   location: { search },
   data: {
-    site: { siteMetadata },
+    site: {
+      siteMetadata: { title, description, siteUrl },
+    },
     allMarkdownRemark: { edges },
   },
 }) {
@@ -67,11 +73,8 @@ const IndexPage: FunctionComponent<Props> = function ({
   )
 
   return (
-    <Template>
-      <Introduction
-        title={siteMetadata.title}
-        description={siteMetadata.description}
-      />
+    <Template title={title} description={description} url={siteUrl}>
+      <Introduction title={title} description={description} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
