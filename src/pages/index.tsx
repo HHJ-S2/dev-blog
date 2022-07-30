@@ -74,7 +74,7 @@ const IndexPage: FunctionComponent<Props> = function ({
 
   return (
     <Template title={title} description={description} url={siteUrl}>
-      <Introduction title={title} description={description} />
+      <Introduction title={title} />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -87,7 +87,7 @@ const IndexPage: FunctionComponent<Props> = function ({
 export default IndexPage
 
 export const getMyQuery = graphql`
-  query MyQuery {
+  query Index {
     site {
       siteMetadata {
         title

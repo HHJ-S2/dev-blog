@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react'
-import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 interface Props {
@@ -18,86 +17,28 @@ const PostItem: FunctionComponent<Props> = function ({
   link,
 }) {
   return (
-    <StyledPostItemWrapper to={link || ''}>
-      <StyledPostItemContent>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledDate>{date}</StyledDate>
-        <StyledCategory>
-          {categories.map(category => (
-            <StyledCategoryItem key={category}>{category}</StyledCategoryItem>
-          ))}
-        </StyledCategory>
-        <StyledSummary>{summary}</StyledSummary>
-      </StyledPostItemContent>
-    </StyledPostItemWrapper>
+    <article className={'py-12'}>
+      <p className={'text-xs text-slate-400'}>{date}</p>
+      <Link to={link || ''}>
+        <h3 className={'py-2 text-2xl font-semibold hover:text-blue-600'}>
+          {title}
+        </h3>
+      </Link>
+      <p className={'text-base text-slate-500'}>{summary}</p>
+      <div className={'flex space-x-2 pt-4'}>
+        {categories.map(category => (
+          <p
+            key={category}
+            className={
+              'py-1 px-2 bg-slate-100 rounded-full text-xs text-slate-600'
+            }
+          >
+            {category}
+          </p>
+        ))}
+      </div>
+    </article>
   )
 }
-
-const StyledPostItemWrapper = styled(Link)`
-  display: flex;
-  margin-bottom: 40px;
-  cursor: pointer;
-
-  &:hover {
-    h3 {
-      color: gray;
-    }
-  }
-`
-
-const StyledPostItemContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledTitle = styled.h3`
-  display: -webkit-box;
-  overflow: hidden;
-  margin-bottom: 3px;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 20px;
-  font-weight: 700;
-`
-
-const StyledDate = styled.div`
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.7;
-`
-
-const StyledCategory = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin: 10px -5px;
-`
-
-const StyledCategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 6px 12px;
-  border-radius: 100px;
-  background: black;
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-`
-
-const StyledSummary = styled.div`
-  display: -webkit-box;
-  overflow: hidden;
-  margin-top: auto;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
-`
 
 export default PostItem

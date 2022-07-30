@@ -21,23 +21,12 @@ const PostList: FunctionComponent<Props> = function ({
   )
 
   return (
-    <StyledPostListWrapper ref={containerRef}>
+    <section ref={containerRef} className={'container divide-y divide-dashed'}>
       {postList.map(({ node: { id, fields, frontmatter } }: Post) => (
         <PostItem {...frontmatter} link={fields?.slug} key={id} />
       ))}
-    </StyledPostListWrapper>
+    </section>
   )
 }
-
-const StyledPostListWrapper = styled.div`
-  width: 768px;
-  margin: 0 auto;
-  padding: 50px 0 100px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 50px 20px;
-  }
-`
 
 export default PostList

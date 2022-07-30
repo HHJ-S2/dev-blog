@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/dev-blog`,
   siteMetadata: {
-    title: `Frontend developer`,
+    title: `__DEV__`,
     description: `HHJ dev blog`,
     author: `hhj`,
     siteUrl: `https://hhj-s2.github.io/`,

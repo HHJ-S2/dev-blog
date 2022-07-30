@@ -6,14 +6,18 @@ interface Props {
 }
 
 const PostContent: FunctionComponent<Props> = function ({ html }) {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+  return (
+    <section className={'container'}>
+      <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+    </section>
+  )
 }
 
 const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 100%;
   margin: 0 auto;
   padding: 100px 0;
   word-break: break-all;

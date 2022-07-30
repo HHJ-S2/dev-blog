@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    container: {
+      center: true,
+      screens: {
+        xl: '1024px',
+      },
+      padding: '2rem',
+    },
   },
   plugins: [],
 }
