@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[754],{2939:function(t,e,r){r.d(e,{YS:function(){return n.Z},ZL:function(){return a.Z}});var n=r(7196),a=r(5907)},234:function(t,e,r){r.r(e);var n=r(2939),a=r(3431);e.default=function(t){var e=t.data.site.siteMetadata,r=e.title,u=e.description,i=e.siteUrl;return(0,a.tZ)(n.YS,{title:r,description:u,url:i},(0,a.tZ)("p",null,"준비중"))}}}]);
+//# sourceMappingURL=component---src-pages-posts-tsx-4ea2d2b0d433f1bafd1e.js.map
