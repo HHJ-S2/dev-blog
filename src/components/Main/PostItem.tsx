@@ -18,7 +18,7 @@ const PostItem: FunctionComponent<Props> = function ({
 }) {
   return (
     <article className={'py-12'}>
-      <p className={'text-xs text-slate-400'}>{date}</p>
+      <p className={'text-sm text-slate-400'}>{date}</p>
       <Link to={link || ''}>
         <h3 className={'py-2 text-2xl font-semibold hover:text-blue-600'}>
           {title}
@@ -30,7 +30,7 @@ const PostItem: FunctionComponent<Props> = function ({
           <p
             key={category}
             className={
-              'py-1 px-2 bg-slate-100 rounded-full text-xs text-slate-600'
+              'py-1 px-3 bg-slate-100 rounded-full text-sm text-slate-600'
             }
           >
             {category}

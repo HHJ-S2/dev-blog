@@ -14,9 +14,11 @@ const PostHead: FunctionComponent<Props> = function ({
   categories,
 }) {
   return (
-    <header className={'container py-20'}>
-      <ProfileImage />
-      <PostHeadInfo title={title} date={date} categories={categories} />
+    <header className={'py-20 mb-20 bg-slate-50'}>
+      <div className={'container'}>
+        <ProfileImage />
+        <PostHeadInfo title={title} date={date} categories={categories} />
+      </div>
     </header>
   )
 }
