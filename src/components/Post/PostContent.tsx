@@ -43,7 +43,7 @@ const MarkdownRenderer = styled.div`
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   hr + h1,
@@ -107,6 +107,11 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  .language-text {
+    background: #f6f8fa;
+    color: #595959;
   }
 `
 
