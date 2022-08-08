@@ -71,3 +71,26 @@ switch tempreature {
 ```
 
 범위연산자와 패턴매칭 연산자를 사용하여 조건문을 실행시킬수 있다.
+
+<br/>
+
+## switch문과 where절
+
+```swift
+  let var = 10
+
+  switch num {
+    case let n where n % 2 === 0: // num 을 n이라는 변수에 '바인딩' 한 뒤 where절로 조건을 확인
+      print("짝수입니다.")
+
+    case let n where n % 2 !== 0:
+      print("홀수입니다.")
+
+    default:
+      break
+  }
+```
+
+`switch` 문에서 참/거짓 외에 다른 조건을 검사하고 싶을때
+
+위와같이 `where` 절의 밸류 바인딩 패턴과 함께 사용한다.
