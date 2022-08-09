@@ -1,8 +1,8 @@
 ---
 date: '2022-08-03'
 title: '데이터 타입(Data Types)'
-categories: ['Swift']
-summary: '데이터 타입(Data Types)'
+categories: ['Swift', 'TIL']
+summary: 'Swift 데이터 타입(Data Types)'
 ---
 
 ## 스위프트 데이터 타입
