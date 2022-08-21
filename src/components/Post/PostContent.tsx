@@ -30,6 +30,7 @@ const MarkdownRenderer = styled.div`
   // Apply Padding Attribute to All Elements
   p {
     padding: 3px 0;
+    color: #2e3338;
   }
 
   // Adjust Heading Element Style
@@ -78,6 +79,7 @@ const MarkdownRenderer = styled.div`
     list-style-type: disc;
     margin-left: 20px;
     padding: 0 0 1rem;
+    color: #2e3338;
   }
 
   // Adjust Horizontal Rule style
@@ -94,7 +96,7 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 30px 0;
+    margin: 0 0 30px;
     padding: 15px;
     font-size: 15px;
 
@@ -107,6 +109,12 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background-color: #282c34;
+    border-radius: 8px;
   }
 
   .language-text {

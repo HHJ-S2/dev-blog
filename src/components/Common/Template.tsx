@@ -1,5 +1,4 @@
 import React, { FunctionComponent, ReactNode } from 'react'
-import styled from '@emotion/styled'
 import GlobalStyle from './GlobalStyle'
 import Footer from './Footer'
 import { Helmet } from 'react-helmet'
