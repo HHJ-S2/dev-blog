@@ -9,20 +9,23 @@ summary: '클래스(Class)와 구조체(Struct)'
 
 ```swift
   class Book {
-    var name = "책 제목"
-    var author = "책 저자"
-    var price = 0
+    var name: String
+    var author: String
+    var price: Int
+
+    // 생성자(initialize)
+    init(name: String, author: String, price: Int){
+      self.name = name
+      self.author = author
+      self.price = price
+    }
 
     func printPrice() {
       print("이 책의 가격은 \(self.price)원 입니다.")
     }
   }
 
-  var book1 = Book()
-
-  book1.name = "스위프트"
-  book1.author = "Any"
-  book1.price = 3000
+  let book1 = Book(name: "Swift", author: "Any", price: 3000)
 
   book1.printPrice() // 이 책의 가격은 3000원 입니다.
 ```
@@ -40,17 +43,16 @@ summary: '클래스(Class)와 구조체(Struct)'
 ## 구조체(Struct)
 
 ```swift
-struct Bird {
-  var name = "새"
+  struct Bird {
+    var name: String
 
-  func fly() {
-    print("날아갑니다.")
+    func fly() {
+      print("\(self.name)가 날아갑니다.")
+    }
   }
-}
 
-var bird1 = Bird()
-
-bird1.name = "참새"
+  var bird1 = Bird.init(name: "참새")
+  bird1.fly() // "참새가 날아갑니다."
 ```
 
 클래스와 구조체는 거의 유사하다. `struct`라는 틀이 있고 그 틀로 인스턴스를 찍어낼 수 있다.
