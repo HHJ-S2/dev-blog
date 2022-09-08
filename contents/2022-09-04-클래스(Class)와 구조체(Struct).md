@@ -46,6 +46,10 @@ summary: '클래스(Class)와 구조체(Struct)'
   struct Bird {
     var name: String
 
+    init(name: String = "새"){
+      self.name = name
+    }
+
     func fly() {
       print("\(self.name)가 날아갑니다.")
     }
