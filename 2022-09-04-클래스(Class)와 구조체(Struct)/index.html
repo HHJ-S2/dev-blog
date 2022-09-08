@@ -32,6 +32,10 @@
 <div class="gatsby-highlight" data-language="swift"><pre class="language-swift"><code class="language-swift">  <span class="token keyword">struct</span> <span class="token class-name">Bird</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
 
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"새"</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+
     <span class="token keyword">func</span> <span class="token function-definition function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token keyword">self</span><span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">가 날아갑니다."</span></span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
